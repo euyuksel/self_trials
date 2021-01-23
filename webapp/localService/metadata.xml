@@ -1,0 +1,74 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="C_DM_MATLSALESDATA_CDS" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="C_DM_MATLSALESDATAType" sap:label="Material Sales Data" sap:semantics="aggregate" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="Material"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="Sales Organization"/>
+                <Property Name="SalesOrganizationName" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="Name"/>
+                <Property Name="DistributionChannel" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="Distribution Channel"/>
+                <Property Name="DistributionChannelName" Type="Edm.String" MaxLength="20" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="Name"/>
+                <Property Name="SalesUnit" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="Sales unit" sap:value-list="standard" sap:semantics="unit-of-measure"/>
+                <Property Name="SenderExternalID" Type="Edm.String" MaxLength="200" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="SENDEREXTERNALID"/>
+                <Property Name="CreationDateTimeDcml" Type="Edm.String" MaxLength="19" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="Time Stamp"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false" sap:label="User Name"/>
+                <Property Name="TotalCount" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false" sap:filterable="false" sap:text="TotalCount_F" sap:updatable="false" sap:label="TOTALCOUNT"/>
+                <Property Name="TotalCount_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false" sap:label="TOTALCOUNT (Formatted)"/>
+            </EntityType>
+            <EntityType Name="SalesUnit" sap:label="Sales unit (Master Data)" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SalesUnit_ID"/>
+                </Key>
+                <Property Name="SalesUnit_ID" Type="Edm.String" Nullable="false" MaxLength="3" sap:text="SalesUnitText" sap:label="Sales unit" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="SalesUnitText" Type="Edm.String" sap:label="Sales unit (Description)" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+            </EntityType>
+            <EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ODataQueryMetadata"/>
+                </Key>
+                <Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="C_DM_MATLSALESDATA_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="C_DM_MATLSALESDATA" EntityType="C_DM_MATLSALESDATA_CDS.C_DM_MATLSALESDATAType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="SalesUnit" EntityType="C_DM_MATLSALESDATA_CDS.SalesUnit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="AdditionalMetadata" EntityType="C_DM_MATLSALESDATA_CDS.ODataQueryAdditionalMetadata" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotations
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="C_DM_MATLSALESDATA_CDS.C_DM_MATLSALESDATAType/SalesUnit">
+                <Annotation Term="Common.ValueList" Qualifier="MasterData">
+                    <Record>
+                        <PropertyValue Property="Label" String="Sales unit ( Master Data )"/>
+                        <PropertyValue Property="CollectionPath" String="SalesUnit"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SalesUnit"/>
+                                    <PropertyValue Property="ValueListProperty" String="SalesUnit_ID"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/C_DM_MATLSALESDATA_CDS/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/C_DM_MATLSALESDATA_CDS/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
