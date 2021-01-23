@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on f6bb24af2c06957453aa7ddcc5b38ff0f756909f
 sap.ui.define([
 		"com/euy/test/List01/controller/BaseController",
 		"sap/ui/model/json/JSONModel"
@@ -34,3 +35,19 @@ sap.ui.define([
 
 	}
 );
+=======
+sap.ui.define([
+	"sap/ui/core/mvc/Controller"
+], function (Controller){
+	"use strict";
+	
+	return Controller.extend("com.euy.test.controller.App", {
+		onShowHello : function () {
+			
+			alert("msg");
+		}
+	});
+	
+	
+});
+>>>>>>> 3e971e7 Program

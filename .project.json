@@ -1,4 +1,5 @@
 {
+<<<<<<< Upstream, based on f6bb24af2c06957453aa7ddcc5b38ff0f756909f
   "projectType": [
     "sap.watt.uitools.ide.fiori",
     "com.watt.common.builder.sapui5clientbuild"
@@ -63,5 +64,13 @@
       "xml": "fioriXmlAnalysis",
       "js": "fioriJsValidator"
     }
+=======
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "de,en",
+    "defaultLanguage": "de",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
+>>>>>>> 3e971e7 Program
   }
 }

@@ -1,6 +1,7 @@
 {
   "run": [
     {
+<<<<<<< Upstream, based on f6bb24af2c06957453aa7ddcc5b38ff0f756909f
       "filePath": "/List01/webapp/test/flpSandbox.html",
       "previewMode": 1,
       "dataMode": 1,
@@ -160,6 +161,23 @@
         "id": "9346924",
         "runnerId": "fiorirunner",
         "displayName": "App as Fiori Component"
+=======
+      "filePath": "/webapp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [],
+      "_metadata": {
+        "runnerId": "webapprunner",
+        "id": 2242585,
+        "displayName": "Run index.html",
+        "lastRunTimeStamp": 1610663213237
+>>>>>>> 3e971e7 Program
       }
     }
   ]

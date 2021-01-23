@@ -1,3 +1,4 @@
+<<<<<<< Upstream, based on f6bb24af2c06957453aa7ddcc5b38ff0f756909f
 <mvc:View
 	xmlns:mvc="sap.ui.core.mvc"
 	controllerName="com.euy.test.List01.controller.App"
@@ -8,4 +9,15 @@
 		 busy="{appView>/busy}"
 		 busyIndicatorDelay="{appView>/delay}"/>
 
+=======
+<mvc:View
+	controllerName="com.euy.test.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Text text="Hello World"/>
+	<Button 
+		text="Say Hallo"
+		press="onShowHello"/>
+		
+>>>>>>> 3e971e7 Program
 </mvc:View>
