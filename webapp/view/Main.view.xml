@@ -31,7 +31,8 @@
 								<items>
 									<core:Item text="England" key="England"/>
 									<core:Item text="Germany" key="Germany"/>
-									<core:Item text="USA" key="USA"/>
+									<core:Item text="Mexico" key="USA"/>
+									<core:Item text="Uruguay" key="USA"/>
 								</items>
 							</Select>
 							<ToggleButton width="7px" enabled="true" pressed="true" icon="sap-icon://display" press="onPressEdit"/>
